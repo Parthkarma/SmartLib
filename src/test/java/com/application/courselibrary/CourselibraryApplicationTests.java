@@ -1,13 +1,13 @@
-package com.application.lmsportal;
+package com.application.courselibrary;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LmsPortalApplicationTests {
+class CourselibraryApplicationTests {
 
- @Test
- void contextLoads() {
- }
+	@Test
+	void contextLoads() {
+	}
 
 }

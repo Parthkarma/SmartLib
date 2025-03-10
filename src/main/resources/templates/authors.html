@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Manage Authors</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+    <style>
+        /* Smooth Background Transition */
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+            background: linear-gradient(-45deg, #ff4757, #6a89cc, #34495e, #222f3e);
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s infinite alternate ease-in-out;
+            color: white;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .card {
+            background-color: rgba(30, 30, 30, 0.95);
+            width: 75%;
+            padding: 30px;
+            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .table {
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .table th, .table td {
+            border-color: #444;
+            text-align: center;
+        }
+
+        /* Hover effect on table rows */
+        .table tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Button hover effects */
+        .btn {
+            border-radius: 6px;
+            font-size: 1rem;
+            padding: 6px 12px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .btn-warning:hover {
+            background-color: #ffcc00;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        .btn-danger:hover {
+            background-color: #ff4444;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+<div th:insert="~{fragments/header :: header}"></div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="text-center">✍️ Manage Authors</h2>
+            <p class="text-center">
+                <a href="/add-author" class="btn btn-primary">
+                    <i class="fas fa-user-plus"></i> Add Author
+                </a>
+            </p>
+            <div th:switch="${authors}">
+                <h3 th:case="null" class="text-warning text-center">No record found !!</h3>
+                <div th:case="*">
+                    <table class="table table-dark table-bordered">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="author : ${authors}">
+                            <td th:text="${author.id}"></td>
+                            <td th:text="${author.name}"></td>
+                            <td>
+                                <a th:href="@{/update-author/{id}(id=${author.id})}" class="btn btn-warning">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a th:href="@{/remove-author/{id}(id=${author.id})}" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

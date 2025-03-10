@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Header</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Remove transition effects */
+        .navbar-toggler,
+        .collapse,
+        .collapsing {
+            transition: none !important;
+        }
+
+        /* Darker navbar styling */
+        .navbar {
+            background-color: #121212; /* Deeper dark color */
+            padding: 15px 20px;
+            border-bottom: 1px solid #333; /* Subtle border for depth */
+        }
+
+        .navbar-brand, .nav-link {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white !important;
+        }
+
+        .nav-link:hover {
+            color: #ffdd57 !important; /* Highlight color on hover */
+        }
+
+        /* Ensure toggler icon matches the dark theme */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+
+<body>
+<nav th:fragment="header" class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">📚 <strong>SmartLib</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">🏠 <strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/categories">📂 <strong>Categories</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/books">📖 <strong>Books</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/publishers">🏢 <strong>Publishers</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/authors">✍️ <strong>Authors</strong></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

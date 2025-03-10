@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home - Library Management</title>
+
+    <style>
+        /* Global Dark Theme */
+        body {
+            background-color: #121212 !important;
+            color: white !important;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animated Circular Gradient Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, #ff4757, #6a89cc, #34495e, #222f3e);
+            background-size: 300% 300%;
+            animation: gradientAnimation 8s infinite alternate ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 600px;
+            width: 100%;
+            background: linear-gradient(rgba(29, 38, 113, 0.85), rgba(195, 55, 100, 0.85)),
+            url("https://bit.ly/38szWHt");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-explore {
+            background-color: #ff4757;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn-explore:hover {
+            background-color: #e84118;
+            transform: scale(1.05);
+        }
+
+        /* Scroll Down Indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: rgba(30, 30, 30, 0.95);
+            border-radius: 8px;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .features-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .feature-box {
+            margin: 20px 0;
+        }
+
+        .feature-box i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ff4757;
+        }
+
+        .feature-box p {
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 60px;
+            background-color: rgba(20, 20, 20, 0.95);
+            text-align: center;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial {
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+            color: #ccc;
+            border-left: 4px solid #ff4757;
+            padding: 20px;
+            position: relative;
+            background: rgba(50, 50, 50, 0.2);
+            border-radius: 6px;
+        }
+
+        .testimonial::before {
+            content: "“";
+            font-size: 50px;
+            color: #ff4757;
+            position: absolute;
+            top: -10px;
+            left: -30px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: rgba(30, 30, 30, 0.95);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+<header>
+    <div th:insert="~{fragments/header :: header}"></div>
+
+    <div class="hero-section">
+        <div>
+            <h1>📚 Unlock the World of Knowledge</h1>
+            <p>Explore thousands of books, manage your library seamlessly, and enhance your learning experience.</p>
+            <a href="#features" class="btn btn-explore">Browse Collection <i class="fas fa-book ml-2"></i></a>
+        </div>
+        <div class="scroll-down">
+            <a href="#features" style="color: white;">
+                <i class="fas fa-angle-down"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <section id="features" class="features-section">
+            <h2>Why Choose Our Library?</h2>
+
+            <div class="row">
+                <div class="col-md-4 feature-box">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Vast Collection</h4>
+                    <p>Access a diverse range of books across multiple genres.</p>
+                </div>
+                <div class="col-md-4 feature-box">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Seamless Access</h4>
+                    <p>Borrow, return, and manage books effortlessly.</p>
+                </div>
+                <div class="col-md-4 feature-box">
+                    <i class="fas fa-book-reader"></i>
+                    <h4>Smart Recommendations</h4>
+                    <p>Get personalized book suggestions based on your interests.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>What Our Readers Say</h2>
+            <div class="testimonial">
+                "This library system has transformed how I read books. The ease of access and organization is amazing!"
+            </div>
+            <div class="testimonial mt-4">
+                "I love how everything is digital! The recommendations feature is a game changer."
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2025 Library Management System | Built for Book Lovers 📖</p>
+</footer>
+
+</body>
+</html>

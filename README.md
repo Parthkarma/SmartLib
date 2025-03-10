@@ -12,16 +12,14 @@ SmartLib is a comprehensive Library Management System (LMS) built with Spring Bo
 - **Member Management**: Register new members, update their information, and track their activities
 - **Borrowing Operations**: Manage book borrowing, returns, and reservations
 - **Admin Dashboard**: Get insights into library statistics and operations
-- **User Authentication**: Secure login and role-based access control
 - **Responsive Design**: Mobile-friendly interface for access from any device
 
 ## Technology Stack
 
 - **Backend**: Spring Boot, Spring MVC, Spring Data JPA
-- **Frontend**: Thymeleaf, HTML5, CSS3, Bootstrap, JavaScript
-- **Database**: MySQL/H2 Database
+- **Frontend**: Thymeleaf, HTML5, CSS3,
+- **Database**: H2 Database
 - **Build Tool**: Maven
-- **Authentication**: Spring Security
 
 ## Prerequisites
 

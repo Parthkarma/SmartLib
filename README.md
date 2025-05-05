@@ -1,6 +1,6 @@
 # SmartLib - Library Management System
 
-access the video demo through the link z : https://youtu.be/r5TcVymJwQ4?si=TIb2AqSdKRK7pEcc
+[Watch the SmartLib Project Demo on YouTube](https://youtu.be/r5TcVymJwQ4?si=TIb2AqSdKRK7pEcc)
 
 ## Overview
 
@@ -11,7 +11,7 @@ SmartLib is a comprehensive Library Management System (LMS) built with Spring Bo
 - **Book Management**: Add, view, update, and delete books in the library inventory.
 - **Member Management**: Register new members, update their information, and track their activities.
 - **Borrowing Operations**: Manage book borrowing, returns, and reservations.
-- **Admin Dashboard**: Get insights into library statistics and operations.
+- **Unit Testing**: Implemented comprehensive unit tests using JUnit and Mockito to ensure the correctness and reliability of core business logic. This includes testing book management, member registration, and borrowing operations to validate expected behaviors and edge cases.
 - **Responsive Design**: Mobile-friendly interface for access from any device.
 
 ## Technology Stack

@@ -1,6 +1,6 @@
 # SmartLib - Library Management System
 
-![SmartLib Logo](https://youtu.be/r5TcVymJwQ4?si=TIb2AqSdKRK7pEcc)
+access the video demo through the link z : https://youtu.be/r5TcVymJwQ4?si=TIb2AqSdKRK7pEcc
 
 ## Overview
 

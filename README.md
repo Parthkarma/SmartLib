@@ -1,6 +1,6 @@
 # SmartLib - Library Management System
 
-![SmartLib Logo](https://via.placeholder.com/150x150)
+![SmartLib Logo](https://youtu.be/r5TcVymJwQ4?si=TIb2AqSdKRK7pEcc)
 
 ## Overview
 
